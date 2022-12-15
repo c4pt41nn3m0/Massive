@@ -280,7 +280,7 @@ bool UALSMantleComponent::MantleCheck(const FALSMantleTraceSettings& TraceSettin
 		MantleType = MantleHeight > 125.0f ? EALSMantleType::HighMantle : EALSMantleType::LowMantle;
 	}
 
-	//Check if while falling the geometry is so low that the animation will clip down into the geometry
+	//Step 5 Check if while falling the geometry is so low that the animation will clip down into the geometry
 	if (MantleType == EALSMantleType::FallingCatch)
 	{
 		FVector GroundTraceStart = CapsuleBaseLocation;
@@ -298,7 +298,7 @@ bool UALSMantleComponent::MantleCheck(const FALSMantleTraceSettings& TraceSettin
 		}
 	}
 
-	// Step 5: If everything checks out, start the Mantle
+	// Step 6: If everything checks out, start the Mantle
 	FALSComponentAndTransform MantleWS;
 	MantleWS.Component = HitComponent;
 	MantleWS.Transform = TargetTransform;

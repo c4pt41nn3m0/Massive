@@ -124,7 +124,7 @@ const UAnimSequence* UE::VertexAnimation::FLightweightMontageInstance::FindSeque
 	if (const FAnimSegment* Segment = AnimTrack.GetSegmentAtTime(Position))
 	{
 		SequenceStartTime = Segment->StartPos - Segment->AnimStartTime;
-		return Cast<UAnimSequence>(Segment->AnimReference);
+		return Cast<UAnimSequence>(Segment->GetAnimReference());
 	}
 
 	return nullptr;
